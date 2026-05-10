@@ -1,0 +1,73 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #111;
+  color: #f2f2f2;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  padding: 24px 20px 10px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+#cyclePhase {
+  opacity: 0.7;
+  margin-top: 6px;
+}
+
+main {
+  padding: 12px;
+}
+
+.card {
+  background: #1d1d1d;
+  border-radius: 18px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.exercise-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.exercise-name {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.checkbox {
+  width: 22px;
+  height: 22px;
+}
+
+.details {
+  margin-top: 14px;
+  opacity: 0.9;
+  line-height: 1.5;
+}
+
+.video {
+  width: 100%;
+  border-radius: 12px;
+  margin-top: 12px;
+}
+
+.tag {
+  display: inline-block;
+  padding: 6px 10px;
+  margin-top: 10px;
+  border-radius: 999px;
+  background: #2f2f2f;
+  font-size: 12px;
+  }
