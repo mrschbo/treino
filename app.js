@@ -38,11 +38,14 @@ function renderWorkout(workoutIds, exercises) {
       </div>
 
       ${exercise.video ? `
-        <video class="video" controls loop muted playsinline>
-          <source src="${exercise.video}" type="video/webm">
-        </video>
-      ` : ''}
-    `;
+  <iframe
+    class="video"
+    src="${exercise.video}"
+    title="${exercise.nome}"
+    frameborder="0"
+    allowfullscreen>
+  </iframe>
+` : ''}
 
     const checkbox = card.querySelector('.checkbox');
 
