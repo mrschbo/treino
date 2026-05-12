@@ -1,68 +1,199 @@
-const container = document.getElementById('workoutContainer');
+const app = document.getElementById("app");
 
-async function loadWorkout() {
-  const exercisesResponse = await fetch('./data/exercicios.json');
-  const workoutResponse = await fetch('./data/treinos.json');
+const weeks = [
+  {
+    title: "Semana 1 — Pós-menstruação",
+    workouts: [
+      {
+        name: "Treino A — Inferiores + Core",
+        exercises: [
+          {
+            nome: "Agachamento Livre",
+            tipo: "Calistenia",
+            foco: "Pistol Squat",
+            tecnica: "Manter peso no centro do pé",
+            explicacao:
+              "Desenvolve amplitude, estabilidade e força relativa.",
+            video: "",
+            nota: ""
+          },
 
-  const exercises = await exercisesResponse.json();
-  const workout = await workoutResponse.json();
+          {
+            nome: "Leg Press 45º",
+            tipo: "Máquina",
+            foco: "Força Base",
+            tecnica: "Evitar bloqueio articular",
+            explicacao:
+              "Permite progressão segura de carga sem exigir estabilização excessiva.",
+            video: "",
+            nota: ""
+          },
 
-  renderWorkout(workout.treinoA, exercises);
-}
+          {
+            nome: "Hollow Body Hold",
+            tipo: "Calistenia",
+            foco: "Core",
+            tecnica: "Achatar lombar no chão",
+            explicacao:
+              "Base da tensão corporal para movimentos de calistenia.",
+            video: "",
+            nota: ""
+          }
+        ]
+      },
 
-function renderWorkout(workoutIds, exercises) {
-  container.innerHTML = '';
+      {
+        name: "Treino B — Superiores + Escápula",
+        exercises: [
+          {
+            nome: "Puxada Frontal",
+            tipo: "Máquina",
+            foco: "Barra Fixa",
+            tecnica: "Puxar cotovelos em direção ao chão",
+            explicacao:
+              "Ajuda no desenvolvimento de dorsais e escápulas.",
+            video: "",
+            nota: ""
+          },
 
-  workoutIds.forEach(id => {
-    const exercise = exercises.find(e => e.id === id);
+          {
+            nome: "Scapular Push-up",
+            tipo: "Calistenia",
+            foco: "Escápula",
+            tecnica: "Mover apenas as escápulas",
+            explicacao:
+              "Fortalece serrátil e estabilizadores escapulares.",
+            video: "",
+            nota: ""
+          }
+        ]
+      }
+    ]
+  }
+];
 
-    if (!exercise) return;
+function createCard(exercise) {
 
-    const checked = localStorage.getItem(id) === 'true';
+  const card = document.createElement("div");
+  card.className = "card";
 
-    const card = document.createElement('div');
-    card.className = 'card';
+  card.innerHTML = `
+  
+    <div class="card-top">
+      <input type="checkbox" />
 
-    card.innerHTML = `
-      <div class="exercise-header">
-        <input type="checkbox" class="checkbox" ${checked ? 'checked' : ''} />
-        <div>
-          <div class="exercise-name">${exercise.nome}</div>
-          <div class="tag">${exercise.grupo}</div>
-        </div>
+      <div class="card-title">
+        ${exercise.nome}
+      </div>
+    </div>
+
+    <div class="meta">
+      Tipo: ${exercise.tipo}<br>
+      Foco: ${exercise.foco}
+    </div>
+
+    <div class="section">
+      <div class="section-title">
+        Técnica
       </div>
 
-      <div class="details">
-        <strong>Ajuda na calistenia:</strong><br>
-        ${exercise.calistenia}
+      ${exercise.tecnica}
+    </div>
+
+    <div class="section">
+      <div class="section-title">
+        Por que ajuda na calistenia
       </div>
 
-function getEmbedUrl(url) {
-  if (url.includes("youtu.be")) {
-    const id = url.split("/").pop();
-    return `https://www.youtube.com/embed/${id}`;
-  }
+      ${exercise.explicacao}
+    </div>
 
-  if (url.includes("youtube.com/watch?v=")) {
-    const id = url.split("v=")[1].split("&")[0];
-    return `https://www.youtube.com/embed/${id}`;
-  }
+    <div class="section">
+      <div class="section-title">
+        Vídeo
+      </div>
 
-  return url;
+      <input 
+        type="text"
+        placeholder="colar link"
+      />
+    </div>
+
+    <div class="section">
+      <div class="section-title">
+        Nota pessoal
+      </div>
+
+      <textarea placeholder="como foi hoje?"></textarea>
+    </div>
+
+  `;
+
+  return card;
 }
 
-    const checkbox = card.querySelector('.checkbox');
+function renderApp() {
 
-    checkbox.addEventListener('change', () => {
-      localStorage.setItem(id, checkbox.checked);
+  weeks.forEach((week) => {
+
+    const weekDiv = document.createElement("div");
+    weekDiv.className = "week";
+
+    weekDiv.innerHTML = `
+      <div class="week-title">
+        ${week.title}
+      </div>
+    `;
+
+    week.workouts.forEach((workout) => {
+
+      const workoutDiv = document.createElement("div");
+      workoutDiv.className = "workout";
+
+      const header = document.createElement("div");
+      header.className = "workout-header";
+
+      header.innerHTML = `
+        <h2>${workout.name}</h2>
+      `;
+
+      const content = document.createElement("div");
+      content.className = "workout-content";
+
+      header.addEventListener("click", () => {
+
+        const visible =
+          content.style.display === "block";
+
+        content.style.display =
+          visible ? "none" : "block";
+      });
+
+      workout.exercises.forEach((exercise) => {
+
+        content.appendChild(
+          createCard(exercise)
+        );
+      });
+
+      const addButton =
+        document.createElement("button");
+
+      addButton.className = "add-button";
+
+      addButton.innerText =
+        "+ Novo exercício";
+
+      content.appendChild(addButton);
+
+      workoutDiv.appendChild(header);
+      workoutDiv.appendChild(content);
+
+      weekDiv.appendChild(workoutDiv);
     });
 
-    container.appendChild(card);
+    app.appendChild(weekDiv);
   });
 }
 
-loadWorkout();
-
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('./service-worker.js');
-}
+renderApp();
