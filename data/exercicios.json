@@ -4,20 +4,160 @@
     "nome": "Leg Press",
     "grupo": "Lower",
     "calistenia": "Cria força base para progressão de pistol squat e estabilidade de pernas.",
-    "video": "./videos/legpress.webm"
+    "video": "COLE_LINK_VIDEO_AQUI"
   },
   {
-    "id": "lat_pulldown",
-    "nome": "Lat Pulldown",
-    "grupo": "Pull",
-    "calistenia": "Ajuda no desenvolvimento de pull-up, active hang e controle escapular.",
-    "video": "./videos/pulldown.webm"
+    "id": "mesa_flexora",
+    "nome": "Mesa Flexora",
+    "grupo": "Posterior",
+    "calistenia": "Fortalece posterior de coxa e ajuda em estabilidade de joelho.",
+    "video": "COLE_LINK_VIDEO_AQUI"
+  },
+  {
+    "id": "cadeira_extensora",
+    "nome": "Cadeira Extensora",
+    "grupo": "Quadriceps",
+    "calistenia": "Ajuda no fortalecimento de extensão de joelho para progressões unilaterais.",
+    "video": "COLE_LINK_VIDEO_AQUI"
+  },
+  {
+    "id": "panturrilha_maquina",
+    "nome": "Panturrilha Máquina",
+    "grupo": "Panturrilha",
+    "calistenia": "Melhora estabilidade e impulsão corporal.",
+    "video": "COLE_LINK_VIDEO_AQUI"
+  },
+  {
+    "id": "prancha",
+    "nome": "Prancha",
+    "grupo": "Core",
+    "calistenia": "Melhora estabilidade abdominal e controle corporal.",
+    "video": "COLE_LINK_VIDEO_AQUI"
   },
   {
     "id": "hollow_hold",
     "nome": "Hollow Hold",
     "grupo": "Core",
     "calistenia": "Base fundamental da calistenia para controle corporal e estabilidade.",
-    "video": "./videos/hollow.webm"
+    "video": "COLE_LINK_VIDEO_AQUI"
+  },
+  {
+    "id": "chest_press",
+    "nome": "Chest Press",
+    "grupo": "Push",
+    "calistenia": "Ajuda na construção de força para push-up e dips.",
+    "video": "COLE_LINK_VIDEO_AQUI"
+  },
+  {
+    "id": "desenvolvimento_maquina",
+    "nome": "Desenvolvimento Máquina",
+    "grupo": "Ombros",
+    "calistenia": "Desenvolve força vertical importante para handstand progressions.",
+    "video": "COLE_LINK_VIDEO_AQUI"
+  },
+  {
+    "id": "peck_deck",
+    "nome": "Peck Deck",
+    "grupo": "Peitoral",
+    "calistenia": "Ajuda no controle de empurrada horizontal.",
+    "video": "COLE_LINK_VIDEO_AQUI"
+  },
+  {
+    "id": "scapular_pushup",
+    "nome": "Scapular Push-up",
+    "grupo": "Escapula",
+    "calistenia": "Melhora controle escapular essencial para calistenia.",
+    "video": "COLE_LINK_VIDEO_AQUI"
+  },
+  {
+    "id": "pushup_inclinado",
+    "nome": "Push-up Inclinado",
+    "grupo": "Push",
+    "calistenia": "Progressão direta para push-up completo.",
+    "video": "COLE_LINK_VIDEO_AQUI"
+  },
+  {
+    "id": "dead_bug",
+    "nome": "Dead Bug",
+    "grupo": "Core",
+    "calistenia": "Ajuda no controle lombar e estabilidade do core.",
+    "video": "COLE_LINK_VIDEO_AQUI"
+  },
+  {
+    "id": "lat_pulldown",
+    "nome": "Lat Pulldown",
+    "grupo": "Pull",
+    "calistenia": "Ajuda no desenvolvimento de pull-up, active hang e controle escapular.",
+    "video": "COLE_LINK_VIDEO_AQUI"
+  },
+  {
+    "id": "remada_maquina",
+    "nome": "Remada Máquina",
+    "grupo": "Costas",
+    "calistenia": "Desenvolve estabilidade dorsal e força de puxada.",
+    "video": "COLE_LINK_VIDEO_AQUI"
+  },
+  {
+    "id": "pullover_maquina",
+    "nome": "Pullover Máquina",
+    "grupo": "Costas",
+    "calistenia": "Ajuda em ativação de dorsais para barra fixa.",
+    "video": "COLE_LINK_VIDEO_AQUI"
+  },
+  {
+    "id": "back_extension",
+    "nome": "Back Extension",
+    "grupo": "Posterior",
+    "calistenia": "Fortalece lombar e cadeia posterior.",
+    "video": "COLE_LINK_VIDEO_AQUI"
+  },
+  {
+    "id": "active_hang",
+    "nome": "Active Hang",
+    "grupo": "Escapula",
+    "calistenia": "Base para pull-up e estabilidade escapular.",
+    "video": "COLE_LINK_VIDEO_AQUI"
+  },
+  {
+    "id": "bird_dog",
+    "nome": "Bird Dog",
+    "grupo": "Core",
+    "calistenia": "Melhora coordenação e estabilidade.",
+    "video": "COLE_LINK_VIDEO_AQUI"
+  },
+  {
+    "id": "goblet_squat",
+    "nome": "Goblet Squat",
+    "grupo": "Lower",
+    "calistenia": "Ajuda no padrão de agachamento e mobilidade.",
+    "video": "COLE_LINK_VIDEO_AQUI"
+  },
+  {
+    "id": "remada_baixa",
+    "nome": "Remada Baixa",
+    "grupo": "Pull",
+    "calistenia": "Ajuda em estabilidade e força de puxada.",
+    "video": "COLE_LINK_VIDEO_AQUI"
+  },
+  {
+    "id": "stepup",
+    "nome": "Step-up",
+    "grupo": "Lower",
+    "calistenia": "Melhora equilíbrio e força unilateral.",
+    "video": "COLE_LINK_VIDEO_AQUI"
+  },
+  {
+    "id": "farmer_carry",
+    "nome": "Farmer Carry",
+    "grupo": "Core",
+    "calistenia": "Melhora estabilidade corporal global e pegada.",
+    "video": "COLE_LINK_VIDEO_AQUI"
+  },
+  {
+    "id": "mobilidade",
+    "nome": "Mobilidade",
+    "grupo": "Mobilidade",
+    "calistenia": "Ajuda em amplitude, controle corporal e recuperação.",
+    "video": "COLE_LINK_VIDEO_AQUI"
   }
 ]
