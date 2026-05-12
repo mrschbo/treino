@@ -63,6 +63,14 @@ main {
   margin-top: 12px;
 }
 
+iframe.video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: none;
+  border-radius: 12px;
+  margin-top: 12px;
+}
+
 .tag {
   display: inline-block;
   padding: 6px 10px;
