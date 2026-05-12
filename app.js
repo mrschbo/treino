@@ -37,15 +37,19 @@ function renderWorkout(workoutIds, exercises) {
         ${exercise.calistenia}
       </div>
 
-      ${exercise.video ? `
-  <iframe
-    class="video"
-    src="${exercise.video}"
-    title="${exercise.nome}"
-    frameborder="0"
-    allowfullscreen>
-  </iframe>
-` : ''}
+function getEmbedUrl(url) {
+  if (url.includes("youtu.be")) {
+    const id = url.split("/").pop();
+    return `https://www.youtube.com/embed/${id}`;
+  }
+
+  if (url.includes("youtube.com/watch?v=")) {
+    const id = url.split("v=")[1].split("&")[0];
+    return `https://www.youtube.com/embed/${id}`;
+  }
+
+  return url;
+}
 
     const checkbox = card.querySelector('.checkbox');
 
