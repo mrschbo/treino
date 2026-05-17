@@ -177,20 +177,35 @@ function renderApp() {
       });
 
       const addButton =
-        document.createElement("button");
+  document.createElement("button");
 
-      addButton.className = "add-button";
+addButton.className = "add-button";
 
-      addButton.innerText =
-        "+ Novo exercício";
+addButton.innerText =
+  "+ Novo exercício";
 
-      content.appendChild(addButton);
+addButton.addEventListener("click", () => {
 
-      workoutDiv.appendChild(header);
-      workoutDiv.appendChild(content);
+  const newExercise = {
+    nome: "Novo exercício",
+    tipo: "Máquina",
+    foco: "",
+    tecnica: "",
+    explicacao: "",
+    video: "",
+    nota: ""
+  };
 
-      weekDiv.appendChild(workoutDiv);
-    });
+  const newCard =
+    createCard(newExercise);
+
+  content.insertBefore(
+    newCard,
+    addButton
+  );
+});
+
+content.appendChild(addButton);
 
     app.appendChild(weekDiv);
   });
