@@ -1,16 +1,23 @@
 const app = document.getElementById("app");
 
 const weeks = [
+
+  // =========================
+  // SEMANA 1
+  // =========================
+
   {
     title: "Semana 1 — Pós-menstruação",
 
     workouts: [
+
       {
         name: "Treino A — Inferiores + Core",
 
         exercises: [
+
           {
-            id: "agachamento_livre_sem1",
+            id: "agachamento_sem1",
 
             nome: "Agachamento Livre",
 
@@ -21,10 +28,10 @@ const weeks = [
             foco: "Progressão para Pistol Squat",
 
             tecnica:
-              "Manter peso no centro do pé, joelhos alinhados com os dedos. Busque maior amplitude a cada sessão.",
+              "Manter peso no centro do pé e joelhos alinhados.",
 
             explicacao:
-              "Fase ideal para ganho de força. Tente aumentar a amplitude ou adicionar repetições em relação ao ciclo anterior.",
+              "Fase ideal para progressão de força e amplitude.",
 
             video: "",
 
@@ -32,7 +39,7 @@ const weeks = [
           },
 
           {
-            id: "leg_press_sem1",
+            id: "legpress_sem1",
 
             nome: "Leg Press 45º",
 
@@ -43,10 +50,10 @@ const weeks = [
             foco: "Força Base",
 
             tecnica:
-              "Evitar bloqueio articular e manter amplitude controlada.",
+              "Evitar bloqueio articular.",
 
             explicacao:
-              "Permite progressão segura de carga sem exigir estabilização excessiva.",
+              "Permite aumento seguro de carga.",
 
             video: "",
 
@@ -54,7 +61,29 @@ const weeks = [
           },
 
           {
-            id: "hollow_hold_sem1",
+            id: "bulgaro_sem1",
+
+            nome: "Agachamento Búlgaro",
+
+            tipo: "Calistenia",
+
+            series: "3 séries de 10 reps",
+
+            foco: "Pistol Squat",
+
+            tecnica:
+              "Controle do equilíbrio e alinhamento pélvico.",
+
+            explicacao:
+              "Desenvolve força unilateral e estabilidade.",
+
+            video: "",
+
+            nota: ""
+          },
+
+          {
+            id: "hollow_sem1",
 
             nome: "Hollow Body Hold",
 
@@ -65,15 +94,16 @@ const weeks = [
             foco: "Core",
 
             tecnica:
-              "Achatar a lombar no chão e manter tensão total do abdômen.",
+              "Achatar lombar no chão.",
 
             explicacao:
-              "Base da tensão corporal necessária para movimentos avançados de calistenia.",
+              "Base da tensão corporal para calistenia.",
 
             video: "",
 
             nota: ""
           }
+
         ]
       },
 
@@ -81,8 +111,9 @@ const weeks = [
         name: "Treino B — Superiores + Escápula",
 
         exercises: [
+
           {
-            id: "puxada_frontal_sem1",
+            id: "pulley_sem1",
 
             nome: "Puxada Frontal",
 
@@ -93,10 +124,10 @@ const weeks = [
             foco: "Primeira Barra Fixa",
 
             tecnica:
-              "Puxar cotovelos em direção ao chão sem elevar ombros.",
+              "Puxar cotovelos para baixo sem elevar ombros.",
 
             explicacao:
-              "Ajuda no desenvolvimento de dorsais e controle escapular.",
+              "Desenvolve dorsais e controle escapular.",
 
             video: "",
 
@@ -104,7 +135,29 @@ const weeks = [
           },
 
           {
-            id: "scapular_pushup_sem1",
+            id: "remada_sem1",
+
+            nome: "Remada Sentada",
+
+            tipo: "Máquina",
+
+            series: "3–4 séries de 8–12 reps",
+
+            foco: "Retração Escapular",
+
+            tecnica:
+              "Retrair escápulas antes de puxar.",
+
+            explicacao:
+              "Melhora estabilidade das costas.",
+
+            video: "",
+
+            nota: ""
+          },
+
+          {
+            id: "scapular_sem1",
 
             nome: "Scapular Push-up",
 
@@ -115,24 +168,332 @@ const weeks = [
             foco: "Escápula",
 
             tecnica:
-              "Mover apenas as escápulas mantendo braços estendidos.",
+              "Mover apenas as escápulas.",
 
             explicacao:
-              "Fortalece serrátil e estabilizadores escapulares.",
+              "Fortalece serrátil e estabilidade escapular.",
 
             video: "",
 
             nota: ""
           }
+
         ]
       }
+
+    ]
+  },
+
+
+
+  // =========================
+  // SEMANA 2
+  // =========================
+
+  {
+    title: "Semana 2 — Período Fértil",
+
+    workouts: [
+
+      {
+        name: "Treino A — Força Máxima",
+
+        exercises: [
+
+          {
+            id: "legpress_sem2",
+
+            nome: "Leg Press 45º",
+
+            tipo: "Máquina",
+
+            series: "3 séries de 8–10 reps",
+
+            foco: "Carga Máxima",
+
+            tecnica:
+              "Movimento controlado e seguro.",
+
+            explicacao:
+              "Fase de melhor capacidade de força.",
+
+            video: "",
+
+            nota: ""
+          },
+
+          {
+            id: "elevacao_sem2",
+
+            nome: "Elevação Pélvica",
+
+            tipo: "Misto",
+
+            series: "3 séries de 10 reps",
+
+            foco: "Glúteos",
+
+            tecnica:
+              "Evitar hiperextensão lombar.",
+
+            explicacao:
+              "Fortalece cadeia posterior.",
+
+            video: "",
+
+            nota: ""
+          }
+
+        ]
+      },
+
+      {
+        name: "Treino B — Pull + Push",
+
+        exercises: [
+
+          {
+            id: "flexao_sem2",
+
+            nome: "Flexão com Joelhos",
+
+            tipo: "Calistenia",
+
+            series: "3 séries de 8–12 reps",
+
+            foco: "Push-up",
+
+            tecnica:
+              "Core firme e peito liderando o movimento.",
+
+            explicacao:
+              "Constrói base para flexões completas.",
+
+            video: "",
+
+            nota: ""
+          },
+
+          {
+            id: "deadhang_sem2",
+
+            nome: "Dead Hang",
+
+            tipo: "Calistenia",
+
+            series: "3 séries de 20 segundos",
+
+            foco: "Pegada",
+
+            tecnica:
+              "Manter escápulas ativas.",
+
+            explicacao:
+              "Base para barra fixa.",
+
+            video: "",
+
+            nota: ""
+          }
+
+        ]
+      }
+
+    ]
+  },
+
+
+
+  // =========================
+  // SEMANA 3
+  // =========================
+
+  {
+    title: "Semana 3 — TPM",
+
+    workouts: [
+
+      {
+        name: "Treino A — Resistência",
+
+        exercises: [
+
+          {
+            id: "extensora_sem3",
+
+            nome: "Cadeira Extensora",
+
+            tipo: "Máquina",
+
+            series: "3 séries de 12–15 reps",
+
+            foco: "Quadríceps",
+
+            tecnica:
+              "Contração controlada no topo.",
+
+            explicacao:
+              "Mantém estímulo muscular sem sobrecarregar SNC.",
+
+            video: "",
+
+            nota: ""
+          },
+
+          {
+            id: "mesaflexora_sem3",
+
+            nome: "Mesa Flexora",
+
+            tipo: "Máquina",
+
+            series: "3 séries de 12–15 reps",
+
+            foco: "Posterior",
+
+            tecnica:
+              "Movimento controlado.",
+
+            explicacao:
+              "Ajuda estabilidade de joelhos.",
+
+            video: "",
+
+            nota: ""
+          }
+
+        ]
+      },
+
+      {
+        name: "Treino B — Superiores Leves",
+
+        exercises: [
+
+          {
+            id: "supinovertical_sem3",
+
+            nome: "Supino Vertical",
+
+            tipo: "Máquina",
+
+            series: "3 séries de 12 reps",
+
+            foco: "Peitoral",
+
+            tecnica:
+              "Movimento leve e estável.",
+
+            explicacao:
+              "Reduz desconforto nos seios durante TPM.",
+
+            video: "",
+
+            nota: ""
+          },
+
+          {
+            id: "deadbug_sem3",
+
+            nome: "Dead Bug",
+
+            tipo: "Calistenia",
+
+            series: "3 séries de 10 reps",
+
+            foco: "Core",
+
+            tecnica:
+              "Controle lombar total.",
+
+            explicacao:
+              "Treina estabilidade sem fadiga excessiva.",
+
+            video: "",
+
+            nota: ""
+          }
+
+        ]
+      }
+
+    ]
+  },
+
+
+
+  // =========================
+  // SEMANA 4
+  // =========================
+
+  {
+    title: "Semana 4 — Menstruação",
+
+    workouts: [
+
+      {
+        name: "Treino A — Regenerativo",
+
+        exercises: [
+
+          {
+            id: "mobilidade_sem4",
+
+            nome: "Mobilidade de Quadril",
+
+            tipo: "Mobilidade",
+
+            series: "10 minutos",
+
+            foco: "Recuperação",
+
+            tecnica:
+              "Movimentos lentos e amplos.",
+
+            explicacao:
+              "Ajuda na recuperação e conforto corporal.",
+
+            video: "",
+
+            nota: ""
+          },
+
+          {
+            id: "panturrilha_sem4",
+
+            nome: "Panturrilha Máquina",
+
+            tipo: "Máquina",
+
+            series: "3 séries de 12 reps",
+
+            foco: "Circulação",
+
+            tecnica:
+              "Amplitude máxima.",
+
+            explicacao:
+              "Estimula circulação e manutenção de força.",
+
+            video: "",
+
+            nota: ""
+          }
+
+        ]
+      }
+
     ]
   }
+
 ];
+
+
 
 function createCard(exercise) {
 
-  const card = document.createElement("div");
+  const card =
+    document.createElement("div");
 
   card.className = "card";
 
@@ -150,11 +511,14 @@ function createCard(exercise) {
 
     <div class="meta">
 
-      <strong>Tipo:</strong> ${exercise.tipo}<br>
+      <strong>Tipo:</strong>
+      ${exercise.tipo}<br>
 
-      <strong>Séries:</strong> ${exercise.series}<br>
+      <strong>Séries:</strong>
+      ${exercise.series}<br>
 
-      <strong>Foco:</strong> ${exercise.foco}
+      <strong>Foco:</strong>
+      ${exercise.foco}
 
     </div>
 
@@ -197,16 +561,19 @@ function createCard(exercise) {
         Nota pessoal
       </div>
 
-      <textarea placeholder="como foi hoje?"></textarea>
+      <textarea
+        placeholder="como foi hoje?"
+      ></textarea>
 
     </div>
 
   `;
 
 
-  // ======================
+
+  // =====================
   // ELEMENTOS
-  // ======================
+  // =====================
 
   const textarea =
     card.querySelector("textarea");
@@ -222,9 +589,10 @@ function createCard(exercise) {
     );
 
 
-  // ======================
-  // CARREGAR DADOS SALVOS
-  // ======================
+
+  // =====================
+  // CARREGAR DADOS
+  // =====================
 
   textarea.value =
     localStorage.getItem(
@@ -244,9 +612,10 @@ function createCard(exercise) {
     ) || "";
 
 
-  // ======================
-  // SALVAR AUTOMATICAMENTE
-  // ======================
+
+  // =====================
+  // SALVAR DADOS
+  // =====================
 
   textarea.addEventListener(
     "input",
@@ -284,8 +653,11 @@ function createCard(exercise) {
   );
 
 
+
   return card;
 }
+
+
 
 function renderApp() {
 
@@ -304,12 +676,16 @@ function renderApp() {
 
     `;
 
+
+
     week.workouts.forEach((workout) => {
 
       const workoutDiv =
         document.createElement("div");
 
-      workoutDiv.className = "workout";
+      workoutDiv.className =
+        "workout";
+
 
 
       const header =
@@ -318,10 +694,10 @@ function renderApp() {
       header.className =
         "workout-header";
 
-
       header.innerHTML = `
         <h2>${workout.name}</h2>
       `;
+
 
 
       const content =
@@ -329,6 +705,7 @@ function renderApp() {
 
       content.className =
         "workout-content";
+
 
 
       header.addEventListener(
@@ -340,9 +717,12 @@ function renderApp() {
             "block";
 
           content.style.display =
-            visible ? "none" : "block";
+            visible
+              ? "none"
+              : "block";
         }
       );
+
 
 
       workout.exercises.forEach(
@@ -355,6 +735,7 @@ function renderApp() {
       );
 
 
+
       const addButton =
         document.createElement("button");
 
@@ -365,6 +746,7 @@ function renderApp() {
         "+ Novo exercício";
 
 
+
       addButton.addEventListener(
         "click",
         () => {
@@ -373,7 +755,9 @@ function renderApp() {
             `novo_${Date.now()}`;
 
 
+
           const newExercise = {
+
             id: uniqueId,
 
             nome: "Novo exercício",
@@ -394,8 +778,10 @@ function renderApp() {
           };
 
 
+
           const newCard =
             createCard(newExercise);
+
 
 
           content.insertBefore(
@@ -406,6 +792,7 @@ function renderApp() {
       );
 
 
+
       content.appendChild(addButton);
 
       workoutDiv.appendChild(header);
@@ -413,11 +800,17 @@ function renderApp() {
       workoutDiv.appendChild(content);
 
       weekDiv.appendChild(workoutDiv);
+
     });
 
 
+
     app.appendChild(weekDiv);
+
   });
+
 }
+
+
 
 renderApp();
