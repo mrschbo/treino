@@ -32,7 +32,18 @@ main {
 
 .week-title {
   font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.week-info {
+  font-size: 13px;
+  color: #aaa;
+  background: #1a1a1a;
+  border-left: 3px solid #555;
+  padding: 10px 14px;
+  border-radius: 10px;
   margin-bottom: 20px;
+  line-height: 1.6;
 }
 
 .workout {
@@ -77,7 +88,13 @@ main {
 .meta {
   margin-top: 10px;
   opacity: 0.8;
-  line-height: 1.5;
+  line-height: 1.7;
+  font-size: 14px;
+}
+
+.meta strong {
+  color: #ccc;
+  font-size: 13px;
 }
 
 .section {
