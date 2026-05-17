@@ -421,5 +421,3 @@ function renderApp() {
 }
 
 renderApp();
-* commit changes
-* esperar atualizar o GitHub Pages
