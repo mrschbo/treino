@@ -1,4 +1,3 @@
-```javascript
 const app = document.getElementById("app");
 
 const weeks = [
