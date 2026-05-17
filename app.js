@@ -421,11 +421,5 @@ function renderApp() {
 }
 
 renderApp();
-```
-
-Depois só:
-
-* apagar o app.js antigo
-* colar este
 * commit changes
 * esperar atualizar o GitHub Pages
