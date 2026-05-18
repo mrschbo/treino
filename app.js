@@ -511,29 +511,58 @@ function createCard(exercise) {
   </button>
 
     </div>
+```javascript id="n44k4u"
+<div class="meta">
 
-    <div class="meta">
+  <label>Tipo</label>
 
-      <strong>Tipo:</strong>
-      ${exercise.tipo}<br>
+  <input
+    class="tipo-input"
+    type="text"
+    value="${exercise.tipo}"
+  />
 
-      <strong>Séries:</strong>
-      ${exercise.series}<br>
+  <label>Séries</label>
 
-      <strong>Foco:</strong>
-      ${exercise.foco}
+  <input
+    class="series-input"
+    type="text"
+    value="${exercise.series}"
+  />
 
-    </div>
+  <label>Foco</label>
 
-    <div class="section">
+  <input
+    class="foco-input"
+    type="text"
+    value="${exercise.foco}"
+  />
 
-      <div class="section-title">
-        Técnica
-      </div>
+</div>
 
-      ${exercise.tecnica}
+<div class="section">
 
-    </div>
+  <div class="section-title">
+    Técnica
+  </div>
+
+  <textarea
+    class="tecnica-input"
+  >${exercise.tecnica}</textarea>
+
+</div>
+
+<div class="section">
+
+  <div class="section-title">
+    Por que ajuda na calistenia
+  </div>
+
+  <textarea
+    class="explicacao-input"
+  >${exercise.explicacao}</textarea>
+
+</div>
 
     <div class="section">
 
@@ -595,6 +624,21 @@ function createCard(exercise) {
   card.querySelector(
     ".delete-button"
   );
+
+const tipoInput =
+  card.querySelector(".tipo-input");
+
+const seriesInput =
+  card.querySelector(".series-input");
+
+const focoInput =
+  card.querySelector(".foco-input");
+
+const tecnicaInput =
+  card.querySelector(".tecnica-input");
+
+const explicacaoInput =
+  card.querySelector(".explicacao-input");
 
 
   // =====================
@@ -685,7 +729,66 @@ deleteButton.addEventListener(
       );
     }
   }
+
+  ```javascript id="lhf5t1"
+tipoInput.addEventListener(
+  "input",
+  () => {
+
+    localStorage.setItem(
+      `${exercise.id}_tipo`,
+      tipoInput.value
+    );
+  }
 );
+
+seriesInput.addEventListener(
+  "input",
+  () => {
+
+    localStorage.setItem(
+      `${exercise.id}_series`,
+      seriesInput.value
+    );
+  }
+);
+
+focoInput.addEventListener(
+  "input",
+  () => {
+
+    localStorage.setItem(
+      `${exercise.id}_foco`,
+      focoInput.value
+    );
+  }
+);
+
+tecnicaInput.addEventListener(
+  "input",
+  () => {
+
+    localStorage.setItem(
+      `${exercise.id}_tecnica`,
+      tecnicaInput.value
+    );
+  }
+);
+
+explicacaoInput.addEventListener(
+  "input",
+  () => {
+
+    localStorage.setItem(
+      `${exercise.id}_explicacao`,
+      explicacaoInput.value
+    );
+  }
+);
+
+);
+
+
 
   return card;
 }
