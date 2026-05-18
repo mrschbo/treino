@@ -1,154 +1,260 @@
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  background: #111;
-  color: #f2f2f2;
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  padding: 20px;
+  color: #333;
 }
 
-header {
-  padding: 24px 20px 10px;
+#app {
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-h1 {
-  margin: 0;
-  font-size: 32px;
+/* SEMANAS */
+.week-container {
+  background: white;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
-p {
-  opacity: 0.7;
+.week-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 25px;
+  border-bottom: 4px solid rgba(255, 255, 255, 0.2);
 }
 
-main {
-  padding: 14px;
-}
-
-.week {
-  margin-bottom: 40px;
-}
-
-.week-title {
+.week-header h1 {
   font-size: 24px;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
+  font-weight: 600;
 }
 
 .week-info {
-  font-size: 13px;
-  color: #aaa;
-  background: #1a1a1a;
-  border-left: 3px solid #555;
-  padding: 10px 14px;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  line-height: 1.6;
+  font-size: 14px;
+  opacity: 0.9;
+  line-height: 1.4;
+  font-style: italic;
 }
 
-.workout {
-  margin-bottom: 24px;
+/* TREINOS */
+.workout-container {
+  border-bottom: 1px solid #eee;
+}
+
+.workout-container:last-child {
+  border-bottom: none;
 }
 
 .workout-header {
-  background: #1e1e1e;
-  padding: 16px;
-  border-radius: 18px;
+  background: #f8f9fa;
+  padding: 18px 25px;
   cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-left: 4px solid #667eea;
+  transition: background 0.3s ease;
+}
+
+.workout-header:hover {
+  background: #f0f1f3;
 }
 
 .workout-header h2 {
-  margin: 0;
-  font-size: 20px;
+  font-size: 18px;
+  color: #333;
+  font-weight: 500;
+}
+
+.workout-header::after {
+  content: '▼';
+  color: #667eea;
+  font-size: 12px;
+  transition: transform 0.3s ease;
+}
+
+.workout-container.collapsed .workout-header::after {
+  transform: rotate(-90deg);
 }
 
 .workout-content {
-  display: none;
-  margin-top: 14px;
+  padding: 20px 25px;
+  max-height: 2000px;
+  overflow: hidden;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  opacity: 1;
 }
 
-.card {
-  background: #1c1c1c;
-  border-radius: 18px;
-  padding: 16px;
+.workout-container.collapsed .workout-content {
+  max-height: 0;
+  padding: 0 25px;
+  opacity: 0;
+  overflow: hidden;
+}
+
+/* CARDS DE EXERCÍCIO */
+.exercise-card {
+  background: white;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.exercise-card:hover {
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+  transform: translateY(-2px);
+}
+
+.card-header {
+  background: #f8f9fa;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.card-header h3 {
+  font-size: 16px;
+  color: #333;
+  font-weight: 600;
+  margin: 0;
+}
+
+.delete-btn {
+  background: #ff6b6b;
+  color: white;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.delete-btn:hover {
+  background: #ff5252;
+  transform: scale(1.1);
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.field {
   margin-bottom: 16px;
 }
 
-.card-top {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+.field:last-child {
+  margin-bottom: 0;
 }
 
-.card-title {
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.meta {
-  margin-top: 10px;
-  opacity: 0.8;
-  line-height: 1.7;
-  font-size: 14px;
-}
-
-.meta strong {
-  color: #ccc;
-  font-size: 13px;
-}
-
-.section {
-  margin-top: 14px;
-}
-
-.section-title {
-  font-weight: bold;
+.field label {
+  display: block;
+  font-weight: 600;
+  color: #495057;
   margin-bottom: 6px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-textarea,
-input {
+.field input[type="text"],
+.field textarea {
   width: 100%;
-  border: none;
-  border-radius: 12px;
-  padding: 12px;
-  margin-top: 8px;
-  background: #2c2c2c;
-  color: white;
+  padding: 10px 12px;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 14px;
+  color: #333;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-textarea {
-  min-height: 80px;
+.field input[type="text"]:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.field textarea {
   resize: vertical;
+  min-height: 80px;
 }
 
-.video-button {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 10px 14px;
-  border-radius: 12px;
-  background: #333;
-  color: white;
-  text-decoration: none;
-}
-
-.add-button {
+/* BOTÃO ADICIONAR */
+.add-exercise-btn {
   width: 100%;
-  padding: 16px;
-  border: 2px dashed #444;
-  background: transparent;
-  color: #aaa;
-  border-radius: 18px;
+  padding: 14px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
   cursor: pointer;
-  font-size: 16px;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  margin-top: 15px;
 }
 
-.delete-button {
-  margin-left: auto;
-  background: #2a2a2a;
-  border: none;
-  color: #aaa;
-  border-radius: 10px;
-  padding: 8px 12px;
-  cursor: pointer;
+.add-exercise-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
+}
+
+.add-exercise-btn:active {
+  transform: translateY(0);
+}
+
+/* RESPONSIVO */
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
+  .week-header {
+    padding: 20px;
+  }
+
+  .week-header h1 {
+    font-size: 20px;
+  }
+
+  .week-info {
+    font-size: 13px;
+  }
+
+  .workout-header {
+    padding: 15px;
+  }
+
+  .workout-header h2 {
+    font-size: 16px;
+  }
+
+  .card-header h3 {
+    font-size: 14px;
+  }
+
+  .card-content {
+    padding: 15px;
+  }
 }
