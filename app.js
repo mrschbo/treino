@@ -1,3 +1,22 @@
+// =====================
+// DADOS DOS EXERCÍCIOS
+// =====================
+
+const exercisesData = {
+  "segunda": [
+    { id: 1, nome: "Flexão", tipo: "Calistenia", series: "3x10", foco: "Peito", tecnica: "Mãos na largura dos ombros", explicacao: "Fortalece peito, ombro e tríceps" },
+    { id: 2, nome: "Rosca Barra", tipo: "Máquina", series: "3x12", foco: "Bíceps", tecnica: "Cotovelo fixo", explicacao: "Isolamento do bíceps" }
+  ],
+  "quarta": [
+    { id: 3, nome: "Barra Fixa", tipo: "Calistenia", series: "3x8", foco: "Costas", tecnica: "Pegada pronada", explicacao: "Trabalha latíssimo e força geral" },
+    { id: 4, nome: "Puxada", tipo: "Máquina", series: "4x10", foco: "Costas", tecnica: "Puxar até o peito", explicacao: "Complementa trabalho de costas" }
+  ],
+  "sexta": [
+    { id: 5, nome: "Agachamento", tipo: "Máquina", series: "4x12", foco: "Perna", tecnica: "Profundidade máxima", explicacao: "Trabalha toda a perna" },
+    { id: 6, nome: "Leg Press", tipo: "Máquina", series: "3x15", foco: "Perna", tecnica: "90 graus", explicacao: "Complementa agachamento" }
+  ]
+};
+
 function createCard(exercise) {
 
   const card = document.createElement("div");
@@ -383,4 +402,53 @@ function createCard(exercise) {
 
 
   return card;
+}
+
+// =====================
+// RENDERIZAR PÁGINA
+// =====================
+
+function renderExercises() {
+  const app = document.getElementById("app");
+  app.innerHTML = "";
+
+  for (const [dia, exercises] of Object.entries(exercisesData)) {
+    const workoutDiv = document.createElement("div");
+    workoutDiv.className = "workout";
+
+    const header = document.createElement("div");
+    header.className = "workout-header";
+    header.style.cursor = "pointer";
+    header.innerHTML = `<h2>${dia.charAt(0).toUpperCase() + dia.slice(1)}</h2>`;
+
+    const content = document.createElement("div");
+    content.className = "workout-content";
+    content.style.display = "block";
+
+    exercises.forEach(exercise => {
+      content.appendChild(createCard(exercise));
+    });
+
+    header.addEventListener("click", () => {
+      if (content.style.display === "none") {
+        content.style.display = "block";
+      } else {
+        content.style.display = "none";
+      }
+    });
+
+    workoutDiv.appendChild(header);
+    workoutDiv.appendChild(content);
+    app.appendChild(workoutDiv);
+  }
+}
+
+// =====================
+// INICIALIZAR
+// =====================
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", renderExercises);
+} else {
+  renderExercises();
 }
