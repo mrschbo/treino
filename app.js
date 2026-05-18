@@ -506,6 +506,9 @@ function createCard(exercise) {
       <div class="card-title">
         ${exercise.nome}
       </div>
+      <button class="delete-button">
+    ✕
+  </button>
 
     </div>
 
@@ -587,7 +590,11 @@ function createCard(exercise) {
     card.querySelector(
       'input[type="text"]'
     );
-
+  
+  const deleteButton =
+  card.querySelector(
+    ".delete-button"
+  );
 
 
   // =====================
@@ -652,7 +659,33 @@ function createCard(exercise) {
     }
   );
 
+deleteButton.addEventListener(
+  "click",
+  () => {
 
+    const confirmDelete =
+      confirm(
+        "Remover exercício?"
+      );
+
+    if (confirmDelete) {
+
+      card.remove();
+
+      localStorage.removeItem(
+        `${exercise.id}_nota`
+      );
+
+      localStorage.removeItem(
+        `${exercise.id}_checked`
+      );
+
+      localStorage.removeItem(
+        `${exercise.id}_video`
+      );
+    }
+  }
+);
 
   return card;
 }
